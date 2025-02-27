@@ -6,4 +6,7 @@ Each gun has the following attributes:
   2. *weight*
   3. *year of fabrication*
   4. *category (smg, rifles, snipers etc.)*
-  5. *color*
+  5. *manufacturer*
+  6. *action type (automatic, semi-automatic, bolt-action)*
+  7. *effective range*
+  8. *barrel length*
