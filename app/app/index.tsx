@@ -3,6 +3,7 @@ import React from "react";
 // @ts-ignore
 import backgroundImage from "@/assets/background.png";
 import CustomTextInput from "@/components/CustomTextInput";
+import CustomMediaInput from "@/components/CustomMediaInput";
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
       <ImageBackground source={backgroundImage} style={styles.bgImage}>
         <Text>Hello World!</Text>
         <CustomTextInput text1="Weight" text2="kilograms" />
+        <CustomMediaInput text1="Photos" mandatory={true} />
       </ImageBackground>
     </View>
   );
