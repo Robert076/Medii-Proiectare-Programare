@@ -1,1 +1,5 @@
-Run this with npx expo start.
+# My MPP Project
+Run this with:
+  1. ```cd app```
+  2. ```npx run ios```.
+
