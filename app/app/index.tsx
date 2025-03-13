@@ -1,5 +1,6 @@
 import { ImageBackground, StyleSheet, Text, View } from "react-native";
 import React from "react";
+// @ts-ignore
 import backgroundImage from "@/assets/background.png";
 
 const App = () => {
