@@ -1,3 +1,3 @@
 # My MPP Project
-Run this with '''npx run ios'''.
+Run this with ```npx run ios```.
 
