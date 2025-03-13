@@ -1,1 +1,3 @@
-Run this with npx expo start.
+# My MPP Project
+Run this with '''npx run ios'''.
+
