@@ -12,7 +12,7 @@ SplashScreen.preventAutoHideAsync();
 
 type CustomTextInputProps = {
   text1: string;
-  text2: string;
+  text2?: string;
   mandatory?: boolean;
 };
 
@@ -39,7 +39,7 @@ const CustomTextInput: React.FC<CustomTextInputProps> = ({ text1, text2, mandato
         <Text style={styles.text1}>
           {text1} {mandatory ? "*" : ""}
         </Text>
-        <Text style={styles.text2}> ({text2})</Text>
+        {text2 && <Text style={styles.text2}> ({text2})</Text>}
       </Text>
       <TextInput style={styles.textInput} />
     </View>
@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     textAlign: "left",
     flexDirection: "column",
+    marginBottom: 10,
   },
   text1: {
     fontFamily: "PoppinsBold",

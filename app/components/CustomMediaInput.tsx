@@ -86,6 +86,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     textAlign: "left",
     flexDirection: "column",
+    marginBottom: 10,
   },
   text1: {
     fontFamily: "PoppinsBold",

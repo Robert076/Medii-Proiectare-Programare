@@ -11,15 +11,18 @@ const App = () => {
   return (
     <View style={styles.container}>
       <ImageBackground source={backgroundImage} style={styles.bgImage}>
-        <Text>Hello World!</Text>
-        {/* {imageBase64 && (
-          <Image
-            source={{ uri: "data:image/jpeg;base64," + imageBase64 }}
-            style={{ width: 200, height: 200 }}
-          />
-        )} */}
+        <CustomTextInput text1="Name" mandatory={true} />
+        <CustomTextInput text1="Caliber" text2="milimeters" mandatory={true} />
         <CustomTextInput text1="Weight" text2="kilograms" />
         <CustomMediaInput text1="Photos" mandatory={true} onImageSelected={setImageBase64} />
+        <CustomTextInput text1="Weight" text2="kilograms" />
+        <CustomTextInput
+          text1="Action type"
+          text2="bolt-action, semi-automatic, automatic"
+          mandatory={true}
+        />
+        <CustomTextInput text1="Category" text2="rifle, smg, pistol, sniper" />
+        <CustomTextInput text1="Effective range" text2="meters" />
       </ImageBackground>
     </View>
   );
