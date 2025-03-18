@@ -14,28 +14,36 @@ SplashScreen.preventAutoHideAsync();
 type CustomMediaInputProps = {
   text1: string;
   mandatory?: boolean;
+  onImageSelected?: (base64: string | null) => void;
 };
 
-const CustomMediaInput: React.FC<CustomMediaInputProps> = ({ text1, mandatory }) => {
+const CustomMediaInput: React.FC<CustomMediaInputProps> = ({
+  text1,
+  mandatory,
+  onImageSelected,
+}) => {
   const [fontsLoaded] = useFonts({
     PoppinsBold: Poppins_700Bold,
     PoppinsBoldItalic: Poppins_700Bold_Italic,
     PoppinsRegular: Poppins_400Regular,
   });
 
-  const [image, setImage] = useState<string | null>(null); // To store the selected image URI
+  const [image, setImage] = useState<string | null>(null);
 
   const pickImage = async () => {
-    // Pick an image from the media library
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ["images"],
       allowsEditing: false,
       aspect: [4, 3],
       quality: 1,
+      base64: true,
     });
 
     if (!result.canceled) {
       setImage(result.assets[0].uri);
+      if (onImageSelected) {
+        onImageSelected(result.assets[0].base64 || null);
+      }
     }
   };
 
