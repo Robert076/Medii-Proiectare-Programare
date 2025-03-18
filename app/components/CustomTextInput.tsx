@@ -13,10 +13,10 @@ SplashScreen.preventAutoHideAsync();
 type CustomTextInputProps = {
   text1: string;
   text2: string;
-  optional?: boolean;
+  mandatory?: boolean;
 };
 
-const CustomTextInput: React.FC<CustomTextInputProps> = ({ text1, text2, optional }) => {
+const CustomTextInput: React.FC<CustomTextInputProps> = ({ text1, text2, mandatory }) => {
   const [fontsLoaded] = useFonts({
     PoppinsBold: Poppins_700Bold,
     PoppinsBoldItalic: Poppins_700Bold_Italic,
@@ -37,7 +37,7 @@ const CustomTextInput: React.FC<CustomTextInputProps> = ({ text1, text2, optiona
     <View style={styles.container}>
       <Text>
         <Text style={styles.text1}>
-          {text1} {optional ? "*" : ""}
+          {text1} {mandatory ? "*" : ""}
         </Text>
         <Text style={styles.text2}> ({text2})</Text>
       </Text>
