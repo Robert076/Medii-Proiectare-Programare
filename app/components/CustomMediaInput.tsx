@@ -34,8 +34,6 @@ const CustomMediaInput: React.FC<CustomMediaInputProps> = ({ text1, mandatory })
       quality: 1,
     });
 
-    console.log(result);
-
     if (!result.canceled) {
       setImage(result.assets[0].uri);
     }
