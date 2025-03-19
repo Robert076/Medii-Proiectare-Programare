@@ -116,6 +116,5 @@ const styles = StyleSheet.create({
   imagePlaceholder: {
     fontFamily: "PoppinsRegular",
     fontSize: 12,
-    color: "rgba(0, 0, 0, 0.5)",
   },
 });

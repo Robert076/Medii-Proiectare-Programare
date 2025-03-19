@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import backgroundImage from "@/assets/background.png";
 import CustomTextInput from "@/components/CustomTextInput";
 import CustomMediaInput from "@/components/CustomMediaInput";
+import Dropdown from "@/components/Dropdown";
 
 const App = () => {
   const [imageBase64, setImageBase64] = useState<string | null>(null);
@@ -16,11 +17,7 @@ const App = () => {
         <CustomTextInput text1="Weight" text2="kilograms" />
         <CustomMediaInput text1="Photos" mandatory={true} onImageSelected={setImageBase64} />
         <CustomTextInput text1="Weight" text2="kilograms" />
-        <CustomTextInput
-          text1="Action type"
-          text2="bolt-action, semi-automatic, automatic"
-          mandatory={true}
-        />
+        <Dropdown text1="Action type" />
         <CustomTextInput text1="Category" text2="rifle, smg, pistol, sniper" />
         <CustomTextInput text1="Effective range" text2="meters" />
       </ImageBackground>
