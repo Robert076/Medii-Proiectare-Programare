@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 10,
     borderWidth: 1,
-    fontSize: 12,
+    fontSize: 14,
     fontFamily: "PoppinsRegular",
     shadowColor: "rgba(0, 0, 0, 0.25)",
     shadowOffset: { width: 0, height: 4 },

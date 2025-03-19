@@ -17,7 +17,13 @@ const App = () => {
         <CustomTextInput text1="Weight" text2="kilograms" />
         <CustomMediaInput text1="Photos" mandatory={true} onImageSelected={setImageBase64} />
         <CustomTextInput text1="Weight" text2="kilograms" />
-        <Dropdown text1="Action type" />
+        <Dropdown
+          text1="Action type"
+          text2="bolt-action, semi-automatic, full-automatic"
+          option1="bolt-action"
+          option2="semi-automatic"
+          option3="full-automatic"
+        />
         <CustomTextInput text1="Category" text2="rifle, smg, pistol, sniper" />
         <CustomTextInput text1="Effective range" text2="meters" />
       </ImageBackground>

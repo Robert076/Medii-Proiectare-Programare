@@ -5,18 +5,37 @@ import DropDownPicker from "react-native-dropdown-picker";
 
 interface DropdownProps {
   text1: string;
+  text2?: string;
+  option1: string;
+  option2: string;
+  option3: string;
+  mandatory?: boolean;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ text1 }) => {
+const Dropdown: React.FC<DropdownProps> = ({
+  text1,
+  text2,
+  option1,
+  option2,
+  option3,
+  mandatory,
+}) => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
-    { label: "Apple", value: "Apple" },
-    { label: "Banana", value: "Banana" },
+    { label: option1, value: option1 },
+    { label: option2, value: option2 },
+    { label: option3, value: option3 },
   ]);
   return (
     <View style={styles.container}>
-      <Text style={styles.text1}>{text1}</Text>
+      <Text>
+        <Text style={styles.text1}>
+          {text1}
+          {mandatory ? "*" : ""}
+        </Text>
+        <Text style={styles.text2}> ({text2})</Text>
+      </Text>
       <DropDownPicker
         open={open}
         value={value}
@@ -60,5 +79,10 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 1,
     shadowRadius: 4,
+  },
+  text2: {
+    fontFamily: "PoppinsBoldItalic",
+    fontSize: 11,
+    color: "white",
   },
 });
