@@ -30,8 +30,9 @@ const styles = StyleSheet.create({
     borderColor: "rgba(0, 0, 0, 0.7)",
     borderRadius: 5,
     textAlignVertical: "center",
-    paddingTop: 10,
+    paddingTop: 8,
     marginTop: 10,
+    fontFamily: "PoppinsBoldItalic",
   },
   view: {
     display: "flex",
@@ -45,5 +46,6 @@ const styles = StyleSheet.create({
     borderColor: "transparent",
     textDecorationColor: "white",
     textDecorationLine: "underline",
+    fontFamily: "PoppinsItalic",
   },
 });
