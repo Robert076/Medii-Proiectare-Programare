@@ -10,6 +10,8 @@ interface DropdownProps {
   option2: string;
   option3: string;
   mandatory?: boolean;
+  value: string;
+  setValue: (text: any) => void;
 }
 
 const Dropdown: React.FC<DropdownProps> = ({
@@ -19,9 +21,10 @@ const Dropdown: React.FC<DropdownProps> = ({
   option2,
   option3,
   mandatory,
+  value,
+  setValue,
 }) => {
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState(null);
   const [items, setItems] = useState([
     { label: option1, value: option1 },
     { label: option2, value: option2 },
@@ -44,6 +47,7 @@ const Dropdown: React.FC<DropdownProps> = ({
         setValue={setValue}
         setItems={setItems}
         style={styles.dropdown}
+        textStyle={{ fontSize: 12 }}
       ></DropDownPicker>
     </View>
   );

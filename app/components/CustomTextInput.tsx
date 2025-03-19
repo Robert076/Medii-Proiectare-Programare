@@ -14,9 +14,17 @@ type CustomTextInputProps = {
   text1: string;
   text2?: string;
   mandatory?: boolean;
+  value: string;
+  onChange: (text: string) => void;
 };
 
-const CustomTextInput: React.FC<CustomTextInputProps> = ({ text1, text2, mandatory }) => {
+const CustomTextInput: React.FC<CustomTextInputProps> = ({
+  text1,
+  text2,
+  mandatory,
+  onChange,
+  value,
+}) => {
   const [fontsLoaded] = useFonts({
     PoppinsBold: Poppins_700Bold,
     PoppinsBoldItalic: Poppins_700Bold_Italic,
@@ -41,7 +49,7 @@ const CustomTextInput: React.FC<CustomTextInputProps> = ({ text1, text2, mandato
         </Text>
         {text2 && <Text style={styles.text2}> ({text2})</Text>}
       </Text>
-      <TextInput style={styles.textInput} />
+      <TextInput style={styles.textInput} value={value} onChangeText={onChange} />
     </View>
   );
 };
