@@ -9,7 +9,7 @@ const index = () => {
       <Pressable
         onPress={() => {
           router.push({
-            pathname: "/add",
+            pathname: "/add/add",
           });
         }}
       >

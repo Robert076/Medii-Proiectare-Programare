@@ -11,7 +11,7 @@ export default function RootLayout() {
         }}
       />
       <Stack.Screen
-        name="add/index"
+        name="add/add"
         options={{
           headerTitle: "Add gun",
           headerStyle: { backgroundColor: "#B7A06E" },
