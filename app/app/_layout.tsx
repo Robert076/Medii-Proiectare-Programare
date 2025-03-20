@@ -1,5 +1,22 @@
-import { Slot } from "expo-router";
+import { Slot, Stack } from "expo-router";
 
 export default function RootLayout() {
-  return <Slot />; // just like the children in web apps
+  return (
+    <Stack>
+      <Stack.Screen
+        name="index"
+        options={{
+          headerTitle: "Home",
+          headerStyle: { backgroundColor: "#B7A06E" },
+        }}
+      />
+      <Stack.Screen
+        name="add/add"
+        options={{
+          headerTitle: "Add gun",
+          headerStyle: { backgroundColor: "#B7A06E" },
+        }}
+      />
+    </Stack>
+  );
 }

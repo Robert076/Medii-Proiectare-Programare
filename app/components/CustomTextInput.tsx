@@ -12,11 +12,19 @@ SplashScreen.preventAutoHideAsync();
 
 type CustomTextInputProps = {
   text1: string;
-  text2: string;
+  text2?: string;
   mandatory?: boolean;
+  value: string;
+  onChange: (text: string) => void;
 };
 
-const CustomTextInput: React.FC<CustomTextInputProps> = ({ text1, text2, mandatory }) => {
+const CustomTextInput: React.FC<CustomTextInputProps> = ({
+  text1,
+  text2,
+  mandatory,
+  onChange,
+  value,
+}) => {
   const [fontsLoaded] = useFonts({
     PoppinsBold: Poppins_700Bold,
     PoppinsBoldItalic: Poppins_700Bold_Italic,
@@ -39,9 +47,9 @@ const CustomTextInput: React.FC<CustomTextInputProps> = ({ text1, text2, mandato
         <Text style={styles.text1}>
           {text1} {mandatory ? "*" : ""}
         </Text>
-        <Text style={styles.text2}> ({text2})</Text>
+        {text2 && <Text style={styles.text2}> ({text2})</Text>}
       </Text>
-      <TextInput style={styles.textInput} />
+      <TextInput style={styles.textInput} value={value} onChangeText={onChange} />
     </View>
   );
 };
@@ -55,6 +63,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     textAlign: "left",
     flexDirection: "column",
+    marginBottom: 10,
   },
   text1: {
     fontFamily: "PoppinsBold",
@@ -75,7 +84,7 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 10,
     borderWidth: 1,
-    fontSize: 12,
+    fontSize: 14,
     fontFamily: "PoppinsRegular",
     shadowColor: "rgba(0, 0, 0, 0.25)",
     shadowOffset: { width: 0, height: 4 },

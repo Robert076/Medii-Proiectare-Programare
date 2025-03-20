@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import {
-  Poppins_400Regular, // Regular
+  Poppins_400Regular,
+  Poppins_400Regular_Italic, // Regular
   Poppins_700Bold, // Bold Regular
   Poppins_700Bold_Italic, // Bold Italic
 } from "@expo-google-fonts/poppins";
@@ -26,6 +27,7 @@ const CustomMediaInput: React.FC<CustomMediaInputProps> = ({
     PoppinsBold: Poppins_700Bold,
     PoppinsBoldItalic: Poppins_700Bold_Italic,
     PoppinsRegular: Poppins_400Regular,
+    PoppinsItalic: Poppins_400Regular_Italic,
   });
 
   const [image, setImage] = useState<string | null>(null);
@@ -86,6 +88,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     textAlign: "left",
     flexDirection: "column",
+    marginBottom: 10,
   },
   text1: {
     fontFamily: "PoppinsBold",
@@ -115,6 +118,5 @@ const styles = StyleSheet.create({
   imagePlaceholder: {
     fontFamily: "PoppinsRegular",
     fontSize: 12,
-    color: "rgba(0, 0, 0, 0.5)",
   },
 });

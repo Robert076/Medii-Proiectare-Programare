@@ -1,40 +1,30 @@
-"use client";
-import { ImageBackground, StyleSheet, Text, View, Image } from "react-native";
-import React, { useState } from "react";
-// @ts-ignore
-import backgroundImage from "@/assets/background.png";
-import CustomTextInput from "@/components/CustomTextInput";
-import CustomMediaInput from "@/components/CustomMediaInput";
+import { Pressable, StyleSheet, Text, View } from "react-native";
+import React from "react";
+import { router } from "expo-router";
 
-const App = () => {
-  const [imageBase64, setImageBase64] = useState<string | null>(null);
+const index = () => {
   return (
     <View style={styles.container}>
-      <ImageBackground source={backgroundImage} style={styles.bgImage}>
-        <Text>Hello World!</Text>
-        {/* {imageBase64 && (
-          <Image
-            source={{ uri: "data:image/jpeg;base64," + imageBase64 }}
-            style={{ width: 200, height: 200 }}
-          />
-        )} */}
-        <CustomTextInput text1="Weight" text2="kilograms" />
-        <CustomMediaInput text1="Photos" mandatory={true} onImageSelected={setImageBase64} />
-      </ImageBackground>
+      <Text>index</Text>
+      <Pressable
+        onPress={() => {
+          router.push({
+            pathname: "/add/add",
+          });
+        }}
+      >
+        <Text>Go to add</Text>
+      </Pressable>
     </View>
   );
 };
 
-export default App;
+export default index;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  bgImage: {
-    flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    resizeMode: "cover",
   },
 });
